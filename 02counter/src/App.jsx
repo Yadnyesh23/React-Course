@@ -1,27 +1,30 @@
-// import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
+import { useState } from 'react';
 import './App.css'
 
 function App() {
   
-  let count = 0
+  const [count, setCount] = useState(0)
 
   const addValue = () => {
-    console.log("Added Value", Math.random());
+    setCount(count+1)
   }
 
   const removeValue = () => {
-    console.log("Removed Value", Math.random());
+        setCount(count-1)
+
   }
 
+  
   return (
     <>
       <h1>Chai Aur react</h1>
       <h2>Counter : {count}</h2>
 
-      <button onClick={addValue}>Add Value</button>
-      <button onClick={removeValue}>Remove Value</button>
+      <button onClick={addValue}>Add Value {count}</button>
+      <button onClick={removeValue}>Remove Value {count}</button>
+      <footer>Footer : {count}</footer>
     </>
   )
 }
