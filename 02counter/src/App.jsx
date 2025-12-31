@@ -8,23 +8,38 @@ function App() {
   const [count, setCount] = useState(0)
 
   const addValue = () => {
-    setCount(count+1)
+    if(count <10){
+      setCount(count+1)
+    }else{
+      setCount(0)
+    }
   }
 
   const removeValue = () => {
-        setCount(count-1)
+        if(count > -10){
+          setCount(count-1)
+        }else{
+          setCount(0)
+        }
 
   }
 
+  const resetValue = () => {
+    setCount(0)
+  }
   
   return (
     <>
       <h1>Chai Aur react</h1>
       <h2>Counter : {count}</h2>
 
-      <button onClick={addValue}>Add Value {count}</button>
-      <button onClick={removeValue}>Remove Value {count}</button>
-      <footer>Footer : {count}</footer>
+      <button onClick={addValue}>Add Value </button>
+      <br />
+      <br />
+      <button onClick={removeValue}>Remove Value </button>
+      <br />
+      <br />
+      <button onClick={resetValue}>Reset Value </button>
     </>
   )
 }
