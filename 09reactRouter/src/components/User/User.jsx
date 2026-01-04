@@ -15,7 +15,7 @@ function User(){
     }, [])
     const {userid} = useParams()
     return (
-        <div>User : {usrid} </div>
+        <div>User : {userid} </div>
     )
 }
 
